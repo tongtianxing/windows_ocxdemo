@@ -1,0 +1,146 @@
+<html xmlns="http://www.w3.org/1999/xhtml" >
+
+<head id="Head1" runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>Untitled Page</title>
+<script language='javascript' for="cmsv6" event="RecSearchEvent(strFile, nStartTime,nEndTime,nFileLen,nFileType,nSvrID,nLocation,nChannel)">
+	alert(strFile);
+</script>
+    <script type="text/javascript">
+        var cmsv6_demo;
+        function MyRecSearchEvent(strFile, nStartTime,nEndTime,nFileLen,nFileType,nSvrID,nLocation,nChannel)
+  	    {
+  	    	alert(strFile);
+  		    alert(strFile+"kkk");
+  	    }
+  	    
+        function Int()
+        {
+          cmsv6_demo = document.getElementById("cmsv6");   
+             cmsv6_demo.ServerIP="121.197.0.50";
+	        cmsv6_demo.ServerPort = "6605";
+	        //alert(MyRecSearchEvent);
+	        //cmsv6_demo.addEventListener("RecSearchEvent", MyRecSearchEvent);
+	        //alert(cmsv6.RecSearchEvent);
+	        //cmsv6.attachEvent("RecSearchEvent", MyRecSearchEvent); 
+	        //alert('2');
+        }
+        
+        function StartShow() {
+        try
+        {            
+	        cmsv6_demo.StartVideo("10017",0,0);
+	        //cmsv6_demo.StartVideo("100001",1,1);
+	        //cmsv6_demo.StartVideo("100001",2,2);
+	        //cmsv6_demo.StartVideo("100001",3,3);	
+	        //cmsv6_demo.SetViewTitle(0,"100001");
+	    cmsv6_demo.SetViewTitle(1,"100001");
+	    cmsv6_demo.SetViewTitle(2,"100001");
+	    cmsv6_demo.SetViewTitle(3,"100001");
+	    cmsv6_demo.StopSubscribeGps();   
+//	                 
+            }catch(e){alert(e.message);}
+        }
+        function StopShow() {
+        try
+        {            
+             //cmsv6_demo = document.getElementById("cmsv6");   
+	                
+	          cmsv6_demo.StopVideo(0);
+	          cmsv6_demo.StopVideo(1);
+	          cmsv6_demo.StopVideo(2);
+	          cmsv6_demo.StopVideo(3);   
+	                 
+            }catch(e){alert(e.message);}
+        }
+         function OSound() {
+        try
+        {            
+            // cmsv6 = document.getElementById("cmsv6");   
+	                
+	          cmsv6_demo.OpenSound(0);
+	          cmsv6_demo.OpenSound(1);
+	          cmsv6_demo.OpenSound(2);
+	          cmsv6_demo.OpenSound(3);   
+	                 
+            }catch(e){alert(e.message);}
+        }
+         function CSound() {
+        try
+        {            
+             //cmsv6_demo = document.getElementById("cmsv6");   
+	                
+	          cmsv6_demo.CloseSound();
+	       
+	                 
+            }catch(e){alert(e.message);}
+        }
+         function StartIntercom() {
+        try
+        {            
+                          
+	        // cmsv6_demo = document.getElementById("cmsv6");   
+	                
+	         cmsv6_demo.StartTalkBack(00001);
+	       
+	                 
+            }catch(e){alert(e.message);}
+        }
+        function StopIntercom() {
+        try
+        {            
+             //cmsv6_demo = document.getElementById("cmsv6");   
+	                
+	          cmsv6_demo.StopTalkBack();
+	       
+	                 
+            }catch(e){alert(e.message);}
+        }
+        function FullScreen()
+        {
+      // cmsv6_demo = document.getElementById("cmsv6");   
+        cmsv6_demo.FullScreen();
+        }
+        
+    function SearchMDVR_Recording()
+    {
+        try
+        {
+        
+            //var cmsv6 = document.getElementById("cmsv6");	
+           	    alert('1');
+            var id = "10017";
+            //must be one day
+            var nStartTime = "2014-02-24 00:00:00";
+            var nEndTime = "2014-02-24 23:59:59";
+            cmsv6_demo.StopRecSearch();
+            alert(id);
+            cmsv6_demo.StartRecSearch(id,0,-1,nStartTime,nEndTime,1,2);
+            alert('3');
+        }
+        catch(e){alert(e.message);}
+    }
+        </script>
+</head>
+
+<body onload="Int();">
+    <form id="form1" action="">
+    
+    <div>
+        <object classid="clsid:DAB63197-3FF9-4236-924C-F8641094DDFD" codebase = "cmsv6.cab#version=6,0,0,4" width="800" height="500" id = "cmsv6" name="cmsv6">
+        </object><br />
+        <input id="Button1" type="button" value="Start Video"  name="button" onclick="StartShow();"/>
+        <input id="Button2" type="button" value="Stop Video"  name="button" onclick="StopShow();"/>
+        <input id="Button3" type="button" value="Full Screen"  name="button" onclick="FullScreen();"/>
+        <input id="Button4" type="button" value="Open Sound"  name="button" onclick="OSound();"/>
+        <input id="Button5" type="button" value="Close Sound"  name="button" onclick="CSound();"/>
+         <input id="Button6" type="button" value="Start Intercom"  name="button" onclick="StartIntercom();"/>
+          <input id="Button7" type="button" value="Stop Intercom"  name="button" onclick="StopIntercom();"/>
+          <input id="Button8" type="button" value="Search Video"  name="button" onclick="SearchMDVR_Recording();"/>
+    </div>
+    </form>
+</body>
+</html>
+
+
+ 

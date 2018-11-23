@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">	
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>车载视频</title>
+	<style type="text/css"> 
+			html, body	{ height:100%; }
+			body { margin:0; padding:0; overflow:auto; text-align:center; 
+			       background-color: #ffffff; }  
+  </style>
+  <script type="text/javascript" >
+		//window.setTimeout("init()", 500) ;
+		function init()
+		{
+			var view = gViewer;
+			view.Layout = 1;
+			view.ServerIP = "218.242.45.170";//"180.166.29.154";
+		  view.ServerPort = "6603";
+		  var deviceID = getParam("id");//"66666";//
+		  var carNO = decodeURI(getParam("no"));
+		  if(carNO != undefined)
+		  	view.SetViewTitle(0,carNO);
+		  if(deviceID != undefined)
+		  	view.StartVideo(deviceID,0,0);
+		}
+		function stopVideo()
+		{
+			var view = gViewer;
+			//alert(view);
+			view.StopVideo(0);
+		}
+		function onClose()
+		{
+			stopVideo();	
+			window.close();
+		}
+		function setFullScreen()
+		{
+			var view = gViewer;
+			view.FullScreen();
+		}
+		function goPTZ(type)
+		{
+			var view = gViewer;
+				
+		  var result = view.PtzControl(0,type,100,0);
+		}
+		function stopPTZ()
+		{
+			var view = gViewer;
+			view.PtzControl(0,19,100,0);
+		}
+		function getParam( paramName ) 
+		{		 
+		    var oRegex = new RegExp( '[\?&]' + paramName + '=([^&]+)', 'i' ) ;		 
+		    var oMatch = oRegex.exec( window.location.search ) ;		 
+		    if ( oMatch && oMatch.length > 1 )		 
+		        return oMatch[1] ;		 
+		    else		 
+		        return '' ;		 
+		}
+		//onunload="stopVideo()"
+	</script>
+</head>
+<body scroll="no" onload="init()" >
+	<!--input type="button" value="关闭" onclick="onClose()"/-->
+	<input type="button" value="向左" onmousedown="goPTZ(0)" onmouseup="stopPTZ()" />
+	<input type="button" value="向右" onmousedown="goPTZ(1)" onmouseup="stopPTZ()"  />
+	<input type="button" value="向上" onmousedown="goPTZ(2)" onmouseup="stopPTZ()"  />
+	<input type="button" value="向下" onmousedown="goPTZ(3)" onmouseup="stopPTZ()"  />
+	<input type="button" value="拉近" onmousedown="goPTZ(8)" onmouseup="stopPTZ()"  />
+	<input type="button" value="拉远" onmousedown="goPTZ(9)" onmouseup="stopPTZ()"  />
+		<OBJECT classid="clsid:DAB63197-3FF9-4236-924C-F8641094DDFD" codebase = "cmsv6.cab#version=6,0,0,3"
+		 width="100%" height="100%" id = "gViewer" name="gViewer" >
+		 </OBJECT> 
+</body>
+</html>

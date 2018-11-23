@@ -1,0 +1,276 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">	
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>车载视频</title>
+	<style type="text/css"> 
+			html, body	{ height:100%; }
+			body { margin:0; padding:0; overflow:auto; text-align:center; 
+			       background-color: #ffffff; }  
+  </style>
+     
+  <script type="text/javascript" >
+  	
+  	function MyRecSearchEvent(strFile, nStartTime,nEndTime,nFileLen,nFileType,nSvrID,nLocation,nChannel)
+  	{
+  		alert(strFile);
+  	}
+  	
+
+
+  	
+		//window.setTimeout("init()", 500) ;
+		function init()
+		{
+			var view = gViewer;
+			view.Layout = 2;
+			view.PaneType=0;
+			view.ServerIP = "210.22.8.99";//"221.130.62.222";//"180.166.29.154";
+		  view.ServerPort = "6605";
+		  view.ColorBK = 250*65535+95*256+59;
+		 
+		  view.ColorVideoBK = 000000;
+		   view.ColorVideoTitleBK = 000000;
+		   view.ColorVideoBKActive = 255*256;
+		    view.attachEvent("RecSearchEvent", MyRecSearchEvent);  
+		  var online=view.CheckOnline("1000");
+		  
+		
+		  var deviceID = "00019";//getParam("id");//"66666";//
+		 
+		  var carNO = decodeURI(getParam("no"));
+		  if(carNO != undefined)
+		  	view.SetViewTitle(0,carNO);
+		  if(deviceID != undefined)
+		  	view.StartVideo(deviceID,0,0);
+		  	
+		  view.StopSubscribeGps();   //停止订阅GPS	
+		}
+		function startVideo()
+		{
+			var view = gViewer;
+			//alert(view);
+			view.StartVideo('00019',0,0);
+			view.SetViewTitle(0,"实时视频");
+		}
+		function stopVideo()
+		{
+			var view = gViewer;
+			//alert(view);
+			view.StopVideo(0);
+			view.SetViewTitle(0,"");
+		}
+		
+		function OpenVoice()
+		{
+			var view = gViewer;
+			view.OpenSound(0);
+			view.StartMonitor("031029",0);
+		}
+		
+		function CloseVoice()
+		{
+			var view = gViewer;
+			view.StopMonitor();
+			view.CloseSound();
+		}
+		
+		function onClose()
+		{
+			stopVideo();	
+			
+		}
+		function setFullScreen()
+		{
+			var view = gViewer;
+			view.FullScreen();
+		}
+		function goPTZ(type)
+		{
+			var view = gViewer;
+				
+		  var result = view.PtzControl(0,type,100,0);
+		}
+		function stopPTZ()
+		{
+			var view = gViewer;
+			view.PtzControl(0,19,100,0);
+		}
+		function getParam( paramName ) 
+		{		 
+		    var oRegex = new RegExp( '[\?&]' + paramName + '=([^&]+)', 'i' ) ;		 
+		    var oMatch = oRegex.exec( window.location.search ) ;		 
+		    if ( oMatch && oMatch.length > 1 )		 
+		        return oMatch[1] ;		 
+		    else		 
+		        return '' ;		 
+		}
+		
+		
+		
+		
+		function timeConvert(dVal) {
+				var oDate = new Date();
+				var localOffset = oDate.getTimezoneOffset() * 60000;//系统时区偏移
+				oDate.setTime((dVal - 25569) * 24 * 3600 * 1000 + localOffset);
+				return oDate;
+}
+
+		
+		function SearchFunc() 
+		{		 
+		   	var view = gViewer;
+		   	
+		   
+		   	
+		   	
+		   	alert("间隔天数为:"+(new Date('2013/10/16 23:59:00')-new Date('1899/12/30 00:00:00'))/1000/60/60/24+"天") 
+
+		   	
+		   	nStartTime  = (new Date('2013/10/16 00:00:00')-new Date('1899/12/30 00:00:00'))/1000/60/60/24;
+		   	nEndTime  = (new Date('2013/10/16 23:59:00')-new Date('1899/12/30 00:00:00'))/1000/60/60/24;
+		    //nEndTime  = nStartTime+1;
+		    
+		    var oDate=timeConvert(nStartTime);
+		    	alert(oDate.toLocaleString()); 
+		    oDate=timeConvert(nEndTime);
+		   
+		   
+		   	alert(oDate.toLocaleString());
+
+		   	var id = "031029";
+		   	nStartTime = "2013-10-17 00:00:00";
+		   	nEndTime = "2013-10-17 23:59:59";
+		   	view.StopRecSearch();
+			 view.StartRecSearch(id,0,-1,nStartTime,nEndTime,1,2);
+		}
+		
+		
+
+		
+		
+		
+		//onunload="stopVideo()"
+	</script>
+</head>
+
+
+
+<style type="text/css" media="screen">
+html { 
+padding:0px; 
+margin:0px; 
+} 
+body { 
+background-color: #e1ddd9; 
+font-size: 12px; 
+font-family: Verdana, Arial, SunSans-Regular, Sans-Serif; 
+color:#3b5FAA; 
+padding:0px 20px; 
+margin:1px; 
+} 
+p, pre, h2 { 
+padding:10px; 
+margin:0px 
+} 
+h1 { 
+font-size: 11px; 
+text-transform:uppercase; 
+text-align: right; 
+color: #564b47; 
+background-color: #90897a; 
+padding:5px 15px; 
+margin:0px 
+} 
+h2 { 
+font-size:14px; 
+padding-top:10px; 
+text-transform:uppercase; 
+color: #f0f0f0; 
+background-color: transparent; 
+margin:1px; 
+} 
+a { 
+color: #ff66cc; 
+font-size: 12px; 
+background-color:transparent; 
+text-decoration: none; 
+} 
+pre { 
+color: #564b47; 
+font-size: 11px; 
+background-color:transparent; 
+font-family: Courier, Monaco, Monospace; 
+} 
+/*  positioning-layers statisch und absolut */ 
+#menu 
+{ 
+position: absolute; 
+width: 220px; 
+left: 0px; 
+height:99%;
+background-color: #3b5FAA; 
+padding:1px; 
+color: #230230230; 
+margin:2px 
+} 
+
+
+#content { 
+margin-left: 205px; 
+height:100%;
+background-color:#6699FF; 
+overflow: auto; 
+padding:1px; 
+} 
+</style>
+
+
+<body scroll="no" topmargin=0 leftmargin=30 scroll=no onload="init()" onunload="onClose()">
+  <div id="menu">
+  	
+  	
+  	</div>
+	<div id="content">
+	<!--input type="button" value="关闭" onclick="onClose()"
+	<input type="button" value="向左" onmousedown="goPTZ(0)" onmouseup="stopPTZ()" />
+	<input type="button" value="向右" onmousedown="goPTZ(1)" onmouseup="stopPTZ()"  />
+	<input type="button" value="向上" onmousedown="goPTZ(2)" onmouseup="stopPTZ()"  />
+	<input type="button" value="向下" onmousedown="goPTZ(3)" onmouseup="stopPTZ()"  />
+	<input type="button" value="拉近" onmousedown="goPTZ(8)" onmouseup="stopPTZ()"  />
+	<input type="button" value="拉远" onmousedown="goPTZ(9)" onmouseup="stopPTZ()"  />/-->
+	
+	<input type="button" value="视频播放" onclick="startVideo()" />
+	<input type="button" value="视频停止" onclick="stopVideo()" />
+	<input type="button" value="打开音频" onclick="OpenVoice()" />
+	<input type="button" value="关闭音频" onclick="CloseVoice()" />
+	<input type="button" value="搜索" onclick="SearchFunc()" />
+	
+	
+	  <div style="width:95%;height:90%; margin-top:10px;margin-left:50px;" >
+		<OBJECT classid="clsid:DAB63197-3FF9-4236-924C-F8641094DDFD"  codebase = "cmsv6.cab#version=6,0,0,3"
+		 width="100%" height="100%" id = "gViewer" name="gViewer" >
+		 </div>
+		 </OBJECT> 
+		</div>
+</body>
+</html>
+
+
+
+<!-- script函数ID="testen" 
+<script type="text/javascript" Language=Javascript>   
+	function mOcall(AID,AName)  
+{   
+	alert(AID+AName);   
+}     
+</script>    
+   -->   
+  
+<!--捕获ocx事件，如果name为aaa的ocx控件抛出OnCall(AID,AName)事件，则下面代码来进行捕获-->
+<script type="text/javascript"  for="testen" event="OnRecSearchEvent(strFile, nStartTime,nEndTime,nFileLen,nFileType,nSvrID,nLocation,nChannel)" >
+ alert(strFile);
+
+</script>   
+    
