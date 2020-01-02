@@ -102,11 +102,11 @@ COCXDemoDlg::COCXDemoDlg(CWnd* pParent /*=NULL*/)
 	m_strDevIDNO = _T("14001");
 	//m_strIP = _T("120.26.98.110");
 	//m_strIP = _T("218.5.80.6");
-	m_strIP = _T("112.33.254.28");
+	m_strIP = _T("192.168.1.249");
 	//m_strIP = _T("47.104.146.80");
 	//m_strIP = _T("202.111.173.178");
 	m_strPort = _T("6605");
-	m_strDevIDNO = _T("040095785999");
+	m_strDevIDNO = _T("10004");
 	m_strSavePicturePath = _T("");
 	m_strAutoCloseTime = _T("0");
 	m_strRecordSplitTime = _T("60");
@@ -1174,13 +1174,6 @@ void COCXDemoDlg::OnBtnSearch()
 	m_DataBeg.SetDateTime(m_DataBeg.GetYear(), m_DataBeg.GetMonth(), m_DataBeg.GetDay(), 23, 59, 59);
 	DATE dEnd = m_DataBeg.m_dt;
 	int nLocation = m_cmbLocation.GetItemData(m_cmbLocation.GetCurSel());
-
-
-	//wchar_t wszUcs[ 1024 ] = { 0 };
-	//int nRet = ::MultiByteToWideChar( CP_ACP, 0, m_strDevIDNO, -1, wszUcs, 1024 );
-	//char szUtf8[1024] = {0};
-	//::WideCharToMultiByte( CP_UTF8, 0, wszUcs, wcslen(wszUcs), szUtf8, 1024, NULL, NULL);
-
 	m_OCX.StartRecSearch(m_strDevIDNO.GetBuffer(0), 
 						m_cmbSearchChannel.GetItemData(m_cmbSearchChannel.GetCurSel()),
 						m_cmbFileAttribute.GetItemData(m_cmbFileAttribute.GetCurSel()),

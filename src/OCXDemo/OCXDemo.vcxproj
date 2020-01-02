@@ -9,12 +9,15 @@
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <SccProjectName />
     <SccLocalPath />
     <Keyword>MFCProj</Keyword>
-    <ProjectGuid>{69816788-7C16-4F93-193B-2BE61DD601AD}</ProjectGuid>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -40,9 +43,13 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>.\../../../../../Build/Client/Client/ocxdemo/Debug\</OutDir>
+    <IntDir>.\../../../../../Build/Client/Client/ocxdemo/Debug\</IntDir>
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>.\../../../../../Build/Client/Client/ocxdemo/Release\</OutDir>
+    <IntDir>.\../../../../../Build/Client/Client/ocxdemo/Release\</IntDir>
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -73,7 +80,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>../../demo/OCXDemo.exe</OutputFile>
+      <OutputFile>../../../../../Bin/Client/CMSV6OCX/demo\OCXDemo.exe</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -101,7 +108,7 @@
     <Bscmake />
     <Link>
       <SubSystem>Windows</SubSystem>
-      <OutputFile>../../demo/OCXDemo.exe</OutputFile>
+      <OutputFile>../../../../../Bin/Client/CMSV6OCX/demo/OCXDemo.exe</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
