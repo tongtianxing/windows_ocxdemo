@@ -1,0 +1,435 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 4, 2\r\n"
+    "#pragma code_page(936)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\OCXDemo.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""l.chs\\afxres.rc""          // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "res\\OCXDemo.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 235, 55
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于 OCXDemo"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,20,20
+    LTEXT           "cmsv6 Demo 1.0 版",IDC_STATIC,40,10,119,8,SS_NOPREFIX
+    LTEXT           "版权所有 (C) 2012",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "确定",IDOK,178,7,50,14,WS_GROUP
+END
+
+IDD_DEMO_DIALOG DIALOGEX 0, 0, 554, 557
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "CMSV6 Demo"
+FONT 9, "宋体"
+BEGIN
+    COMBOBOX        IDC_COMBO_WND_SHOW,396,11,91,200,CBS_DROPDOWNLIST | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_EDIT_SERVER_IP,396,25,91,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_SERVER_PORT,396,41,91,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_EDIT_DEV_ID,396,57,91,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_CHANNEL,396,73,91,152,CBS_DROPDOWNLIST | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO_WND,396,87,91,152,CBS_DROPDOWNLIST | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO_VIDEO_MODE,396,101,91,87,CBS_DROPDOWNLIST | 
+                    CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_VIEW_SIZE,396,115,91,94,CBS_DROPDOWNLIST | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO_VIEW_ARRANGE,396,129,91,94,CBS_DROPDOWNLIST | 
+                    WS_TABSTOP
+    PUSHBUTTON      "抓拍所有通道图片",IDC_BUTTON_ALL_PIC,340,147,101,14
+    PUSHBUTTON      "设置焦点窗口",IDC_BUTTON_SET_ACTIVE_WND,444,147,50,14
+    PUSHBUTTON      "获取焦点窗口",IDC_BUTTON_GET_ACTIVE_WND,497,147,50,14
+    PUSHBUTTON      "开启对讲",IDC_BUTTON_TALK_BACK,340,164,50,14
+    PUSHBUTTON      "开启监听",IDC_BUTTON_MONITOR,392,164,50,14
+    PUSHBUTTON      "打开声音",IDC_BUTTON_OPEN_SOUND,444,164,50,14
+    DEFPUSHBUTTON   "开始预览",IDOK,497,164,50,14
+    PUSHBUTTON      "开始录像",IDC_BUTTON_START_RECORD,340,180,50,14
+    PUSHBUTTON      "停止录像",IDC_BUTTON_STOP_RECORD,392,180,50,14
+    PUSHBUTTON      "抓拍",IDC_BUTTON_PIC,340,198,50,14
+    PUSHBUTTON      "停止预览",IDC_BUTTON_STOP,497,180,50,14
+    EDITTEXT        IDC_EDIT_TITLE,89,209,91,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "设置窗口标题",IDC_BUTTON_SET_TITLE,185,207,50,14
+    COMBOBOX        IDC_COMBO_WND_LAYOUT,89,226,91,152,CBS_DROPDOWNLIST | 
+                    WS_TABSTOP
+    PUSHBUTTON      "全屏",IDC_BUTTON_FULL,185,225,50,14
+    PUSHBUTTON      "控件背景",IDC_BUTTON_OCX_BK,238,225,50,14
+    PUSHBUTTON      "选择路径",IDC_BUTTON_SELECT_PATH,185,242,50,14
+    PUSHBUTTON      "设置抓拍路径",IDC_BUTTON_SAVE_PICTURE_PATH,238,242,50,
+                    14
+    EDITTEXT        IDC_EDIT_AUTO_CLOSE_TIME,89,261,91,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    PUSHBUTTON      "设置视频自动关闭时长(秒)",IDC_BUTTON_AUTO_CLOSE_TIME,
+                    185,260,103,14
+    EDITTEXT        IDC_EDIT_RECORD_SPLIT_TIME,89,278,91,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    PUSHBUTTON      "设置录像打包时长(分)",IDC_BUTTON_REC_SPLIT_TIME,185,277,
+                    103,14
+    EDITTEXT        IDC_EDIT_RESERVED_SPACE,89,295,91,14,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    PUSHBUTTON      "设置保留磁盘空间(KB)",IDC_BUTTON_RESERVED_SPACE,185,295,
+                    103,14
+    COMBOBOX        IDC_COMBO_DISK_NO_SPACE_OPERATE_TYPE,89,312,91,152,
+                    CBS_DROPDOWNLIST | WS_TABSTOP
+    PUSHBUTTON      "设置磁盘空间不足操作类型",IDC_BUTTON_DISK_NO_SPACE,185,
+                    313,103,14
+    PUSHBUTTON      "左上",IDC_BTN_LEFT_UP,354,228,24,14
+    PUSHBUTTON      "上",IDC_BTN_UP,382,228,24,14
+    PUSHBUTTON      "右上",IDC_BTN_RIGHT_UP,410,228,24,14
+    PUSHBUTTON      "左",IDC_BTN_LEFT,354,246,24,14
+    PUSHBUTTON      "自动",IDC_BTN_CRUISE,382,246,24,14
+    PUSHBUTTON      "右",IDC_BTN_RIGHT,408,246,24,14
+    PUSHBUTTON      "左下",IDC_BTN_LEFT_DOWN,354,264,24,14
+    PUSHBUTTON      "下",IDC_BTN_DOWN,382,264,24,14
+    PUSHBUTTON      "右下",IDC_BTN_RIGHT_DOWN,410,264,24,14
+    CONTROL         "Slider1",IDC_SLIDER_SPEED,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,353,284,93,15
+    PUSHBUTTON      "-",IDC_BTN_ZOOM_DEL,453,228,21,14
+    PUSHBUTTON      "+",IDC_BTN_ZOOM_ADD,509,228,21,14
+    PUSHBUTTON      "-",IDC_BTN_LIGHT_DEL,453,246,21,14
+    PUSHBUTTON      "+",IDC_BTN_LIGHT_ADD,509,246,21,14
+    PUSHBUTTON      "-",IDC_BTN_FOCUS_DEL,453,264,21,14
+    PUSHBUTTON      "+",IDC_BTN_FOCUS_ADD,509,264,21,14
+    PUSHBUTTON      "Wiper",IDC_BTN_WIPER,453,286,31,14
+    PUSHBUTTON      "Light",IDC_BTN_LIGHT,500,286,31,14
+    EDITTEXT        IDC_EDIT_PONIT,357,313,54,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "设置",IDC_BTN_PRESET_SET,413,311,25,14
+    PUSHBUTTON      "调用",IDC_BTN_PRESET_MOVE,443,311,25,14
+    PUSHBUTTON      "删除",IDC_BTN_PRESET_DEL,471,311,25,14
+    CONTROL         "Spin1",IDC_SPIN_POINT,"msctls_updown32",UDS_ARROWKEYS | 
+                    NOT WS_VISIBLE,500,310,10,14
+    EDITTEXT        IDC_EDIT_DEV_IDNO,89,347,91,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_SEARCH_CHANNEL,89,364,91,152,CBS_DROPDOWNLIST | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO_LOCATION,89,380,91,114,CBS_DROPDOWNLIST | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO_FILE_TYPE,89,396,91,91,CBS_DROPDOWNLIST | 
+                    WS_TABSTOP
+    COMBOBOX        IDC_COMBO_FILE_ATTRIBUTE,89,412,91,167,CBS_DROPDOWNLIST | 
+                    WS_TABSTOP
+    CONTROL         "DateTimePicker1",IDC_DATETIMEPICKER_SEARCH_TIME,
+                    "SysDateTimePick32",DTS_RIGHTALIGN | WS_TABSTOP,89,428,
+                    91,15
+    PUSHBUTTON      "Search",IDC_BUTTON_SEARCH,89,447,88,13
+    CONTROL         "List1",IDC_LIST_FILE,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,195,344,349,121
+    EDITTEXT        IDC_ED_GPSDEV,91,483,94,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "订阅GPS和报警信息",IDC_BTN_GPS,201,483,73,14
+    LTEXT           "服务器IP",IDC_STATIC,343,28,50,8
+    LTEXT           "服务器端口",IDC_STATIC,343,45,50,8
+    LTEXT           "设备ID",IDC_STATIC,343,60,50,8
+    LTEXT           "通道号",IDC_STATIC,343,75,50,8
+    LTEXT           "窗口号",IDC_STATIC,343,89,50,8
+    LTEXT           "窗口分割",IDC_STATIC,11,226,72,8
+    EDITTEXT        IDC_EDIT_PICTURE_SAVE_PATH,89,242,91,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "抓拍路径",IDC_STATIC,11,246,72,8
+    LTEXT           "自动关闭视频时间",IDC_STATIC,11,264,72,8
+    LTEXT           "录像打包时间",IDC_STATIC,11,281,72,8
+    LTEXT           "磁盘空间不足",IDC_STATIC,11,316,72,8
+    LTEXT           "保留磁盘空间",IDC_STATIC,11,299,72,8
+    LTEXT           "视频控制",IDC_STATIC,343,103,50,8
+    GROUPBOX        "",IDC_STATIC,336,219,216,114
+    LTEXT           "焦距",IDC_STATIC,485,232,17,8
+    LTEXT           "光圈",IDC_STATIC,485,250,17,8
+    LTEXT           "变焦",IDC_STATIC,485,268,17,8
+    LTEXT           "窗口模式",IDC_STATIC,343,14,50,8
+    GROUPBOX        "",IDC_STATIC,1,197,330,136
+    GROUPBOX        "",IDC_STATIC,336,0,215,218
+    GROUPBOX        "",IDC_STATIC,1,336,550,131
+    LTEXT           "设备IDNO",IDC_STATIC,11,350,72,8
+    LTEXT           "位置",IDC_STATIC,11,382,72,8
+    LTEXT           "时间",IDC_STATIC,11,432,72,8
+    LTEXT           "文件类型",IDC_STATIC,11,398,72,8
+    LTEXT           "录像类型",IDC_STATIC,11,415,72,8
+    LTEXT           "通道号",IDC_STATIC,11,367,72,8
+    LTEXT           "窗口比例",IDC_STATIC,343,118,50,8
+    LTEXT           "窗口排列",IDC_STATIC,343,131,50,8
+    GROUPBOX        "",IDC_STATIC,1,469,549,36
+    LTEXT           "设备编号（以;分隔）",IDC_STATIC,9,486,76,8
+    LTEXT           "",IDC_ST_GPS,283,484,255,14,SS_SUNKEN
+    PUSHBUTTON      "是否在线",IDC_BTN_ONLINE,490,57,50,14
+    PUSHBUTTON      "远程抓拍",IDC_BUTTON_PIC_DEV,444,198,50,14
+    PUSHBUTTON      "抓拍所有",IDC_BUTTON_PIC_ALL,392,198,50,14
+    CONTROL         "",IDC_OCXCTRL,"{DAB63197-3FF9-4236-924C-F8641094DDFD}",
+                    WS_TABSTOP,0,0,329,195
+    PUSHBUTTON      "获取3G流量",IDC_BUTTON_3G_NET,490,75,50,14
+    PUSHBUTTON      "设置3G流量",IDC_BUTTON_3G_NET_SET,491,90,50,14
+    EDITTEXT        IDC_ED_GPSDEV_BROADCAST,90,528,94,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "开始广播",IDC_BTN_BROADCAST,200,528,73,14
+    GROUPBOX        "",IDC_STATIC,0,514,549,36
+    LTEXT           "设备编号（以;分隔）",IDC_STATIC,8,531,76,8
+END
+
+IDD_DLG_3G_FLOW_CONFIG DIALOG DISCARDABLE  0, 0, 402, 214
+STYLE WS_POPUP
+FONT 8, "Tahoma"
+BEGIN
+    EDITTEXT        IDC_EDIT_DAY_USED,103,30,60,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT_MONTH_HAVE,103,47,60,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT_TO_PAY_DAY,103,64,60,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    EDITTEXT        IDC_EDIT_MONTH_USED,103,81,60,12,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    COMBOBOX        IDC_COMBO_ENABLE_MONITOR,103,111,60,122,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_PAY_DAY,103,127,60,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_EDIT_MONTH_LIMINT,103,143,60,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    EDITTEXT        IDC_EDIT_DAY_LIMINT,103,159,60,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "开启每日提醒",IDC_CHECK_DAY_REMIND,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,279,111,112,10
+    EDITTEXT        IDC_EDIT_DAY_REMIND,279,127,60,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    CONTROL         "开启每月提醒",IDC_CHECK_MONTH_REMIND,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,279,143,105,10
+    EDITTEXT        IDC_EDIT_MONTH_REMIND,279,159,60,12,ES_AUTOHSCROLL | 
+                    ES_NUMBER
+    GROUPBOX        "GPRS/3G使用状态",IDC_STATIC_STATUS_3G,6,18,390,81
+    RTEXT           "今日已用",IDC_STATIC_TODAY_USER,37,32,61,8
+    LTEXT           "M",IDC_STATIC_1,166,32,35,8
+    RTEXT           "本月已用",IDC_STATIC_MONTH_USER,30,82,68,8
+    LTEXT           "M",IDC_STATIC_2,166,82,23,8
+    RTEXT           "本月剩余",IDC_STATIC_MONTH_HAVE,37,49,61,8
+    LTEXT           "M",IDC_STATIC_3,166,48,35,8
+    RTEXT           "距结算日",IDC_STATIC_TO_PAY_DAY,37,66,61,8
+    LTEXT           "天",IDC_STATIC_DAY,166,65,35,8
+    GROUPBOX        "流量设置",IDC_STATIC_SET_3G,6,101,191,76
+    RTEXT           "每月套餐限额",IDC_STATIC_MONTH_LMT,35,145,63,8
+    LTEXT           "M",IDC_STATIC_5,166,161,25,8
+    RTEXT           "每月流量提醒",IDC_STATIC_MONTH_TELL_TO,211,161,63,8
+    LTEXT           "%",IDC_STATIC,342,160,29,10
+    RTEXT           "结算日",IDC_STATIC_PAY_DAY,35,129,63,8
+    LTEXT           "日",IDC_STATIC_D,166,128,25,8
+    RTEXT           "每日流量提醒",IDC_STATIC_DAY_REMIND,211,129,63,8
+    LTEXT           "%",IDC_STATIC_6,342,129,35,8
+    RTEXT           "开启流量监控",IDC_STATIC_ENABLE_MONITOR,35,113,63,8
+    LTEXT           "Static",IDC_STATIC_TIP_INFO,7,181,388,8
+    CONTROL         "数据校正",IDC_BUT_CORRECT,"Button",BS_OWNERDRAW | NOT 
+                    WS_VISIBLE | WS_TABSTOP,285,7,45,11
+    CONTROL         "清空统计数据",IDC_BUT_CLEAR,"Button",BS_OWNERDRAW | NOT 
+                    WS_VISIBLE | WS_TABSTOP,239,7,45,11
+    CONTROL         "配置",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,228,194,
+                    45,11
+    CONTROL         "刷新",IDCANCEL_REFLESH,"Button",BS_OWNERDRAW | 
+                    WS_TABSTOP,285,194,45,11
+    CONTROL         "取消",IDCANCEL,"Button",BS_OWNERDRAW | WS_TABSTOP,342,
+                    194,45,11
+    RTEXT           "每日限额",IDC_STATIC_DAY_LIMIT,35,160,63,8
+    LTEXT           "M",IDC_STATIC_7,166,145,25,8
+    GROUPBOX        "流量预警",IDC_STATIC_FLOW_ALARM,203,101,193,76
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080404B0"
+        BEGIN
+            VALUE "CompanyName", "\0"
+            VALUE "FileDescription", "OCXDemo Microsoft 基础类应用程序\0"
+            VALUE "FileVersion", "1, 0, 0, 1\0"
+            VALUE "InternalName", "OCXDemo\0"
+            VALUE "LegalCopyright", "版权所有 (C) 2012\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "OCXDemo.EXE\0"
+            VALUE "ProductName", "OCXDemo 应用程序\0"
+            VALUE "ProductVersion", "1, 0, 0, 1\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 228
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 48
+    END
+
+    IDD_DEMO_DIALOG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 547
+        BOTTOMMARGIN, 550
+    END
+
+    IDD_DLG_3G_FLOW_CONFIG, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 210
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_POP MENU DISCARDABLE 
+BEGIN
+    POPUP "录像搜索"
+    BEGIN
+        MENUITEM "远程回放",                    ID_MENU_RECSEARCH_PLAY
+        MENUITEM "下载",                        ID_MENU_RECSEARCH_DOWN
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DEMO_DIALOG DLGINIT
+BEGIN
+    IDC_OCXCTRL, 0x376, 28, 0
+0x0000, 0x0000, 0x0000, 0x0001, 0x330e, 0x0000, 0x1e48, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "关于 OCXDemo(&A)..."
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE 4, 2
+#pragma code_page(936)
+#endif //_WIN32
+#include "res\OCXDemo.rc2"  // non-Microsoft Visual C++ edited resources
+#include "l.chs\afxres.rc"          // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ generated include file.
-// Used by OCXDemo.rc
+// Microsoft Visual C++ 生成的包含文件。
+// 供 OCXDemo.rc 使用
 //
 #define IDCANCEL_REFLESH                3
 #define IDM_ABOUTBOX                    0x0010
@@ -14,6 +14,7 @@
 #define IDR_MENU_POP                    166
 #define IDD_TRANSPARENT                 169
 #define IDD_DLG_REC_SEARCH_1078         171
+#define IDD_DLG_USER_SESSION            173
 #define IDD_DLG_3G_FLOW_CONFIG          237
 #define IDC_EDIT_DAY_USED               1000
 #define IDC_EDIT_SERVER_IP              1001
@@ -67,6 +68,7 @@
 #define IDC_CMB_REC_FORMAT              1034
 #define IDC_BUTTON_DISK_NO_SPACE2       1035
 #define IDC_BTN_REC_FORMAT              1035
+#define IDC_BTN_USER_SESSION            1037
 #define IDC_BUTTON_OCX_BK               1044
 #define IDC_GVIEWERCTRL                 1050
 #define IDC_OCXCTRL                     1050
@@ -202,6 +204,8 @@
 #define IDC_CHK_ALARM_1078_32           1186
 #define IDC_CHK_ALARM_1078_ALL          1187
 #define IDC_ED_ALARM_TIP                1188
+#define IDC_EDIT1                       1189
+#define IDC_ED_SESSION                  1189
 #define IDC_STATIC_TO_PAY_DAY           1261
 #define IDC_STATIC_DAY_REMIND           1262
 #define IDC_STATIC_TODAY_USER           1273
@@ -241,9 +245,9 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        173
+#define _APS_NEXT_RESOURCE_VALUE        177
 #define _APS_NEXT_COMMAND_VALUE         32780
-#define _APS_NEXT_CONTROL_VALUE         1189
+#define _APS_NEXT_CONTROL_VALUE         1190
 #define _APS_NEXT_SYMED_VALUE           101
 #endif
 #endif

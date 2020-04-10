@@ -241,6 +241,7 @@ public:
 	afx_msg void OnBnClickedBtnRecFormat();
 	afx_msg void OnBnClickedBtnRecSearch1078();
 	void BetchDownFileEventOcxctrl(LPCTSTR strFilePath, long nMsg, long nParam);
+	afx_msg void OnBnClickedBtnUserSession();
 };
 
 //{{AFX_INSERT_LOCATION}}

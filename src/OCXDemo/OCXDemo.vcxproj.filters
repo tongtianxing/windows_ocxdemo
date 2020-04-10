@@ -39,6 +39,9 @@
     <ClCompile Include="cmsv6ocx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DlgUserSession.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="OCXDemo.rc">
@@ -71,6 +74,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="cmsv6ocx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgUserSession.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

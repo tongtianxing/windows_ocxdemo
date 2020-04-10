@@ -66,6 +66,7 @@ END
 // remains consistent on all systems.
 IDR_MAINFRAME           ICON                    "res\\OCXDemo.ico"
 
+
 /////////////////////////////////////////////////////////////////////////////
 //
 // Dialog
@@ -216,6 +217,7 @@ BEGIN
     LTEXT           "录像保存格式",IDC_STATIC,12,333,72,8
     PUSHBUTTON      "1078录像搜索",IDC_BTN_REC_SEARCH_1078,8,467,68,13,NOT WS_VISIBLE
     COMBOBOX        IDC_CMB_STREAM_TYPE,490,107,50,87,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "用户会话",IDC_BTN_USER_SESSION,490,35,50,14
 END
 
 IDD_DLG_3G_FLOW_CONFIG DIALOG 0, 0, 402, 214
@@ -372,6 +374,16 @@ BEGIN
     LTEXT           "报警标志位说明",IDC_STATIC,366,117,60,8
 END
 
+IDD_DLG_USER_SESSION DIALOGEX 0, 0, 309, 54
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "用户会话号(32个十六进制字符)"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,198,33,50,14
+    PUSHBUTTON      "取消",IDCANCEL,252,33,50,14
+    EDITTEXT        IDC_ED_SESSION,7,9,295,18,ES_AUTOHSCROLL
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -453,6 +465,14 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 408
     END
+
+    IDD_DLG_USER_SESSION, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 302
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 47
+    END
 END
 #endif    // APSTUDIO_INVOKED
 
@@ -491,6 +511,22 @@ BEGIN
     IDC_OCXCTRL, 0x376, 20, 0
 0x0000, 0x0000, 0x0000, 0x0001, 0x330e, 0x0000, 0x1e48, 0x0000, 0x0000, 
 0x0000, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_OCXDEMO_DIALOG AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
+IDD_DLG_USER_SESSION AFX_DIALOG_LAYOUT
+BEGIN
     0
 END
 

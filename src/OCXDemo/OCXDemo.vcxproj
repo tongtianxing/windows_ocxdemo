@@ -18,6 +18,7 @@
     <SccProjectName />
     <SccLocalPath />
     <Keyword>MFCProj</Keyword>
+    <ProjectGuid>{69816788-7C16-4F93-193B-2BE61DD601AD}</ProjectGuid>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -117,6 +118,7 @@
     <ClCompile Include="CxPTZButton.cpp" />
     <ClCompile Include="DlgRecSearch1078.cpp" />
     <ClCompile Include="DlgTransparent.cpp" />
+    <ClCompile Include="DlgUserSession.cpp" />
     <ClCompile Include="OCXDemo.cpp" />
     <ClCompile Include="OCXDemoDlg.cpp" />
     <ClCompile Include="StdAfx.cpp">
@@ -135,6 +137,7 @@
     <ClInclude Include="CxPTZButton.h" />
     <ClInclude Include="DlgRecSearch1078.h" />
     <ClInclude Include="DlgTransparent.h" />
+    <ClInclude Include="DlgUserSession.h" />
     <ClInclude Include="OCXDemo.h" />
     <ClInclude Include="OCXDemoDlg.h" />
     <ClInclude Include="Resource.h" />

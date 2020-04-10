@@ -53,13 +53,6 @@ public:
 		InvokeHelper(0x13, DISPATCH_METHOD, VT_I4, (void*)&result, parms, szDevIDNO, nChannel, nWindow);
 		return result;
 	}
-	long StartVideoEx(LPCTSTR szDevIDNO, long nChannel, long nWindow, long nStreamType)
-	{
-		long result;
-		static BYTE parms[] = VTS_BSTR VTS_I4 VTS_I4 VTS_I4 ;
-		InvokeHelper(0x42, DISPATCH_METHOD, VT_I4, (void*)&result, parms, szDevIDNO, nChannel, nWindow, nStreamType);
-		return result;
-	}
 	long StopVideo(long nWindow)
 	{
 		long result;
@@ -341,6 +334,20 @@ public:
 		InvokeHelper(0x40, DISPATCH_METHOD, VT_BSTR, (void*)&result, parms, szPlate, szAlarmString, BegDate, EndDate, nChn, nRecType, nFileFormat);
 		return result;
 	}
+	long StopBetchDownFile(LPCTSTR strFilePath)
+	{
+		long result;
+		static BYTE parms[] = VTS_BSTR ;
+		InvokeHelper(0x41, DISPATCH_METHOD, VT_I4, (void*)&result, parms, strFilePath);
+		return result;
+	}
+	long StartVideoEx(LPCTSTR szDevIDNO, long nChannel, long nWindow, long nStreamType)
+	{
+		long result;
+		static BYTE parms[] = VTS_BSTR VTS_I4 VTS_I4 VTS_I4 ;
+		InvokeHelper(0x42, DISPATCH_METHOD, VT_I4, (void*)&result, parms, szDevIDNO, nChannel, nWindow, nStreamType);
+		return result;
+	}
 
 // Properties
 //
@@ -534,6 +541,26 @@ long GetRecFileFormat()
 void SetRecFileFormat(long propVal)
 {
 	SetProperty(0x3c, VT_I4, propVal);
+}
+long GetRealAVUsePrivate()
+{
+	long result;
+	GetProperty(0x43, VT_I4, (void*)&result);
+	return result;
+}
+void SetRealAVUsePrivate(long propVal)
+{
+	SetProperty(0x43, VT_I4, propVal);
+}
+CString GetUserSession()
+{
+	CString result;
+	GetProperty(0x44, VT_BSTR, (void*)&result);
+	return result;
+}
+void SetUserSession(CString propVal)
+{
+	SetProperty(0x44, VT_BSTR, propVal);
 }
 
 

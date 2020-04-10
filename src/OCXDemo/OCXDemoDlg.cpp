@@ -7,6 +7,7 @@
 #include "AlarmTypeParse.h"
 #include "DlgTransparent.h"
 #include "DlgRecSearch1078.h"
+#include "DlgUserSession.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -257,6 +258,7 @@ BEGIN_MESSAGE_MAP(COCXDemoDlg, CDialog)
 	ON_BN_CLICKED(IDC_BTN_STOP_PLAYBACK, &COCXDemoDlg::OnBnClickedBtnStopPlayback)
 	ON_BN_CLICKED(IDC_BTN_REC_FORMAT, &COCXDemoDlg::OnBnClickedBtnRecFormat)
 	ON_BN_CLICKED(IDC_BTN_REC_SEARCH_1078, &COCXDemoDlg::OnBnClickedBtnRecSearch1078)
+	ON_BN_CLICKED(IDC_BTN_USER_SESSION, &COCXDemoDlg::OnBnClickedBtnUserSession)
 END_MESSAGE_MAP()
 
 BEGIN_EVENTSINK_MAP(COCXDemoDlg, CDialog)
@@ -2383,5 +2385,16 @@ void COCXDemoDlg::BetchDownFileEventOcxctrl(LPCTSTR strFilePath, long nMsg, long
 		break;
 	default :
 		ASSERT(FALSE);
+	}
+}
+
+
+void COCXDemoDlg::OnBnClickedBtnUserSession()
+{
+	CDlgUserSession dlg;
+	dlg.SetSession(m_OCX.GetUserSession());
+	if (IDOK == dlg.DoModal())
+	{
+		m_OCX.SetUserSession(dlg.GetSession());
 	}
 }
